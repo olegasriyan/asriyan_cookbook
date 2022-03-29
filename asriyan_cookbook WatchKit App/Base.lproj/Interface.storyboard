@@ -1,47 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14256" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="19455" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch44"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14243"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14219"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="19454"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc">
+                    <items>
+                        <imageView alignment="center" verticalAlignment="center" image="logo" id="QTP-OF-4K3"/>
+                        <label alignment="center" verticalAlignment="center" text="CookBook" id="fN6-0Y-BmU">
+                            <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <segue destination="Bqd-md-qkd" kind="relationship" relationship="nextPage" id="Zh6-76-fJf"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
-        <!--Static Notification Interface Controller-->
-        <scene sceneID="AEw-b0-oYE">
+        <!--Table RecipesIC-->
+        <scene sceneID="LdV-J7-IHd">
             <objects>
-                <notificationController id="YCC-NB-fut">
+                <controller id="Bqd-md-qkd" customClass="TableRecipesIC" customModule="asriyan_cookbook_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                        <table alignment="left" id="qzP-x7-0BO">
+                            <items>
+                                <tableRow identifier="tableRow" id="vUj-7I-zXP" customClass="RowTable">
+                                    <group key="rootItem" width="1" alignment="left" id="2aS-V8-JbH">
+                                        <items>
+                                            <imageView width="30" height="30" alignment="left" verticalAlignment="center" image="swift" catalog="system" id="yjV-dP-Igh">
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <label width="76" height="20" alignment="left" verticalAlignment="center" text="RecName" id="dbG-2w-gFX"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowPicture" destination="yjV-dP-Igh" id="kwr-vl-AxU"/>
+                                        <outlet property="rowRecipeName" destination="dbG-2w-gFX" id="OaH-Oi-RzS"/>
+                                        <segue destination="dkd-e3-xz7" kind="push" id="8Hc-5i-gdW"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
                     <connections>
-                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
-                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
-                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
+                        <outlet property="table" destination="qzP-x7-0BO" id="goA-ia-Svw"/>
                     </connections>
-                </notificationController>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
+            <point key="canvasLocation" x="449" y="345"/>
         </scene>
-        <!--Notification Controller-->
-        <scene sceneID="ZPc-GJ-vnh">
+        <!--Detail RecipeIC-->
+        <scene sceneID="UB9-eJ-yty">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="dkd-e3-xz7" customClass="DetailRecipeIC" customModule="asriyan_cookbook_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="HVE-bG-j39">
+                            <items>
+                                <imageView width="24" height="24" alignment="center" verticalAlignment="center" id="TZW-nM-18e"/>
+                                <label alignment="center" verticalAlignment="center" text="name" id="9Ua-zH-Zw8"/>
+                            </items>
+                        </group>
+                        <imageView alignment="center" id="hcU-Uc-6CT"/>
+                        <group width="1" alignment="left" layout="vertical" id="BVJ-uv-eRI">
+                            <items>
+                                <label alignment="left" text="Автор" id="lEX-Vt-M0D"/>
+                                <label alignment="left" text="authorName" id="Zh5-oI-K61"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="TNR-82-moY">
+                            <items>
+                                <label alignment="left" text="Описание:" id="Pv7-Ro-jE9"/>
+                            </items>
+                        </group>
+                        <button alignment="left" id="jn3-jx-VQ6">
+                            <group key="contentGroup" width="1" alignment="left" id="o6D-pl-7jA">
+                                <items>
+                                    <label alignment="left" text="recipeText:" id="3QR-Sa-W9d"/>
+                                </items>
+                            </group>
+                            <connections>
+                                <segue destination="tN2-fx-l32" kind="modal" id="xab-Ip-vpg"/>
+                            </connections>
+                        </button>
+                        <slider width="1" alignment="left" maximum="0.0" steps="5" minimumImage="star" catalog="system" maximumImage="star.fill" id="QpV-rQ-1Mm">
+                            <color key="color" red="0.97254901960784312" green="0.70196078431372544" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                        </slider>
+                    </items>
+                    <connections>
+                        <outlet property="authorRecipe" destination="Zh5-oI-K61" id="dd0-Y4-ZXc"/>
+                        <outlet property="nameRecipe" destination="9Ua-zH-Zw8" id="LLw-X6-s80"/>
+                        <outlet property="textRecipe" destination="3QR-Sa-W9d" id="fRu-Hb-pzE"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="680" y="345"/>
         </scene>
-        <!--Notification Controller-->
-        <scene sceneID="Niz-AI-uX2">
+        <!--Interface Controller-->
+        <scene sceneID="gHQ-xc-AcN">
             <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="tN2-fx-l32">
+                    <items>
+                        <label width="1" alignment="left" text="recipeText" textAlignment="justified" numberOfLines="0" id="EFV-9u-1dH"/>
+                    </items>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="468" y="345"/>
+            <point key="canvasLocation" x="900" y="345"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="48" height="48"/>
+        <image name="star" catalog="system" width="128" height="115"/>
+        <image name="star.fill" catalog="system" width="128" height="115"/>
+        <image name="swift" catalog="system" width="128" height="112"/>
+    </resources>
 </document>

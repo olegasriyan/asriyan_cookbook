@@ -11,11 +11,12 @@
 		3FFB984327F32CBF0023D14D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FFB984127F32CBF0023D14D /* Interface.storyboard */; };
 		3FFB984527F32CC00023D14D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FFB984427F32CC00023D14D /* Assets.xcassets */; };
 		3FFB984B27F32CC00023D14D /* asriyan_cookbook WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3FFB984A27F32CC00023D14D /* asriyan_cookbook WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3FFB985027F32CC00023D14D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB984F27F32CC00023D14D /* InterfaceController.swift */; };
+		3FFB985027F32CC00023D14D /* TableRecipesIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB984F27F32CC00023D14D /* TableRecipesIC.swift */; };
 		3FFB985227F32CC00023D14D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB985127F32CC00023D14D /* ExtensionDelegate.swift */; };
 		3FFB985427F32CC00023D14D /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB985327F32CC00023D14D /* NotificationController.swift */; };
 		3FFB985627F32CC00023D14D /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB985527F32CC00023D14D /* ComplicationController.swift */; };
 		3FFB985827F32CC10023D14D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FFB985727F32CC10023D14D /* Assets.xcassets */; };
+		3FFB986B27F337880023D14D /* DetailRecipeIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB986A27F337880023D14D /* DetailRecipeIC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,13 +67,17 @@
 		3FFB984227F32CBF0023D14D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		3FFB984427F32CC00023D14D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FFB984A27F32CC00023D14D /* asriyan_cookbook WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "asriyan_cookbook WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FFB984F27F32CC00023D14D /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		3FFB984F27F32CC00023D14D /* TableRecipesIC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRecipesIC.swift; sourceTree = "<group>"; };
 		3FFB985127F32CC00023D14D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		3FFB985327F32CC00023D14D /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		3FFB985527F32CC00023D14D /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		3FFB985727F32CC10023D14D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FFB985927F32CC10023D14D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FFB985A27F32CC10023D14D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		3FFB986827F331CF0023D14D /* RowTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTable.swift; sourceTree = "<group>"; };
+		3FFB986927F3329E0023D14D /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
+		3FFB986A27F337880023D14D /* DetailRecipeIC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeIC.swift; sourceTree = "<group>"; };
+		3FFB986C27F3399C0023D14D /* RecipeDescriptionIC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDescriptionIC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +114,10 @@
 			isa = PBXGroup;
 			children = (
 				3FFB984127F32CBF0023D14D /* Interface.storyboard */,
+				3FFB986C27F3399C0023D14D /* RecipeDescriptionIC.swift */,
+				3FFB986A27F337880023D14D /* DetailRecipeIC.swift */,
+				3FFB986927F3329E0023D14D /* Recipes.swift */,
+				3FFB986827F331CF0023D14D /* RowTable.swift */,
 				3FFB984427F32CC00023D14D /* Assets.xcassets */,
 			);
 			path = "asriyan_cookbook WatchKit App";
@@ -117,7 +126,7 @@
 		3FFB984E27F32CC00023D14D /* asriyan_cookbook WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				3FFB984F27F32CC00023D14D /* InterfaceController.swift */,
+				3FFB984F27F32CC00023D14D /* TableRecipesIC.swift */,
 				3FFB985127F32CC00023D14D /* ExtensionDelegate.swift */,
 				3FFB985327F32CC00023D14D /* NotificationController.swift */,
 				3FFB985527F32CC00023D14D /* ComplicationController.swift */,
@@ -256,9 +265,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FFB985427F32CC00023D14D /* NotificationController.swift in Sources */,
+				3FFB986B27F337880023D14D /* DetailRecipeIC.swift in Sources */,
 				3FFB985627F32CC00023D14D /* ComplicationController.swift in Sources */,
 				3FFB985227F32CC00023D14D /* ExtensionDelegate.swift in Sources */,
-				3FFB985027F32CC00023D14D /* InterfaceController.swift in Sources */,
+				3FFB985027F32CC00023D14D /* TableRecipesIC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
